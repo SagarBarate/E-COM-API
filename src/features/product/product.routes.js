@@ -1,15 +1,17 @@
-//Manage routes and path to the product controller
+// Manage routes/paths to ProductController
 
-//1. Import Express
-import Express  from "express";
+// 1. Import express.
+import express from 'express';
+import ProductController from './product.controller.js';
 
-import ProductController from "./product.controller.js";
+// 2. Initialize Express router.
+const productRouter = express.Router();
+const productController = new ProductController();
+
+// All the paths to the controller methods.
+// localhost/api/products 
+productRouter.get('/', productController.getAllProducts);
+productRouter.post('/', productController.addProduct);
 
 
-
-//2.Initialize a express router
-const router = express.Router();
-
-export default router;
-
-
+export default productRouter;
