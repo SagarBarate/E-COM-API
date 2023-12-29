@@ -3,7 +3,7 @@
 // 1. Import express.
 import express from 'express';
 import ProductController from './product.controller.js';
-import upload from "../../../uploads"
+import {upload} from "../../middlewares/file.upload.middleware.js"
 
 // 2. Initialize Express router.
 const productRouter = express.Router();
