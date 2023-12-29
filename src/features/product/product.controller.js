@@ -8,11 +8,21 @@ export default class ProductController{
     }
 
     addProduct(req, res){
-        console.log(req.body);
-        console.log("this is the post request ");
-        res.status(200).send("Post request recieved");
+        const {name, price,sizes} = req.body;
+        const newProduct = {
+            name,
+            prices:parseFloat(price),
+            sizes:sizes.split(','),
+            imageUrl:req.file.filename,
+
+        };
+
+       const createdrecord=  ProductModel.add(newProduct);
+
+       res.status(201).send(createdrecord);
 
     }
+
 
     rateProduct(req,res){}
 
