@@ -8,9 +8,10 @@ const storage = multer.diskStorage({
         cb(null, './uploads/')
     },
     filename:(req,file, cb)=>{
-        cb(null, new Date().toISOString()+file.originalname)
+        cb(null, new Date().toISOString().replace(/:/g, '_') +
+file.originalname)
     }
 });
 
-export const  upload = multer({storage:storage})
+export const upload = multer({storage:storage})
 
