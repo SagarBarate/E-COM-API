@@ -4,3 +4,13 @@ Add a product done
 Get one product  done
 Filter Product done
 Rate a product  
+Add items to cart 
+Get items of cart 
+Remove items from cart 
+
+
+UserController 
+Signup  - Email name , Password , TypeOfUser(customer, seller)
+Signin
+
+
